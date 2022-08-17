@@ -5,6 +5,15 @@ export default {
     },
   },
   properties: {
+    name: {
+      label: {
+        en: "Name",
+        fr : "Nom"
+      },
+      type: "Text",
+      defaultValue: "treeselect",
+      bindable: true,
+    },
     initValue: {
       label: {
         en: "Init value",
@@ -20,24 +29,7 @@ export default {
         fr : "Options"
       },
       type: "Text",
-      defaultValue:
-        [ {
-          id: 'a',
-          label: 'a',
-          children: [ {
-            id: 'aa',
-            label: 'aa',
-          }, {
-            id: 'ab',
-            label: 'ab',
-          } ],
-        }, {
-          id: 'b',
-          label: 'b',
-        }, {
-          id: 'c',
-          label: 'c',
-        }],
+      defaultValue:null,
       bindable: true,
     }
   },

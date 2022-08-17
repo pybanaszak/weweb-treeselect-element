@@ -1,16 +1,21 @@
 <template>
-    <div class="treeselect">
-      <p style="font-size:8px;">coucou</p>
-      <treeselect v-model="value" :multiple="true" :options="optionsData" />
-   </div>
+      <treeselect
+       v-model="treeValue"
+       :multiple="false"
+       :options="treeOptions"
+       :name="treeName"
+       :show-count="true"
+       placeholder="Catégorie du produit"
+       loadingText="Chargement..."
+      />
 </template>
 
 <script>
 
 // import the component
-import Treeselect from '@riophae/vue-treeselect'
+import Treeselect from 'vue3-treeselect'
 // import the styles
-import '@riophae/vue-treeselect/dist/vue-treeselect.css'
+import 'vue3-treeselect/dist/vue3-treeselect.css'
 
 export default {
   // register the component
@@ -19,12 +24,9 @@ export default {
     content: { type: Object, required: true },
   },
   computed: {
-    optionsData() {
-      return {
-        value: this.content.initValue,
-        options: this.content.options,
-      };
-    },
+    treeOptions() {return this.content.options},
+    treeName() {return this.content.name},
+    treeValue() {return this.content.initValue},
   },
 };
 </script>
